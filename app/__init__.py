@@ -1,5 +1,5 @@
 import os
-import psycopg2
+from .models.database import DatabaseConnection
 from instance.config import app_config
 from flask import Flask, Blueprint, jsonify
 
@@ -9,6 +9,13 @@ def create_app(name_conf):
     
     app.config.from_object(app_config[name_conf])
     app.config.from_pyfile('config.py')
-    # db_url = app_config[name_conf].Database_Url
+    db_url = app_config[name_conf].Database_Url
+    
+    print("\n\n\n", db_url, "\n\n\n")
+
+    DatabaseConnection(db_url)
+    if name_conf=="testing":
+        DatabaseConnection.drop_tables(DatabaseConnection)
+    DatabaseConnection.create_tables(DatabaseConnection)
     
     return app

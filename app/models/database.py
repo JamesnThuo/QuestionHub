@@ -14,14 +14,14 @@ class DatabaseConnection:
         except Exception as error:
             print(error)
     
-    def create_tables(self,query):
+    def create_tables(self):
         """creating the tables in migration"""
         tables_to_create=set_up_tables()
         for query in tables_to_create:
             cur.execute(query)
             conn.commit()
     
-    def drop_tables(self,query):
+    def drop_tables(self):
         """Drops tables in the database"""
         tables_to_drop=drop_table_if_exists()
         for query in tables_to_drop:
