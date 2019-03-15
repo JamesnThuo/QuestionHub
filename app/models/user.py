@@ -15,7 +15,7 @@ class User(db_conn):
 
     """Registering a new user"""
     def create_new_user(self,userdata):
-        query=""" INSERT INTO users (firstname, secondname, email, password, registerdate) VALUES ('{}','{}','{}','{}',{}')
+        query=""" INSERT INTO users (firstname, secondname, email, password, registerdate) VALUES ('{}','{}','{}','{}','{}')
         """ .format(self.firstname,self.secondname,self.email,self.password,self.registerdate)
         
         """passing to database function to save user"""
