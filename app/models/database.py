@@ -44,3 +44,8 @@ class DatabaseConnection:
         cur.execute(query)
         all_rows=cur.fetchall()
         return all_rows
+    
+    def delete_row(self,query):
+        """Deletes a row in a table"""
+        cur.execute(query)
+        conn.commit()

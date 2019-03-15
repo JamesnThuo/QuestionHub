@@ -15,4 +15,6 @@ class Question(db_conn):
         """.format(self.description,self.user_id,self.posted_on)
         self.saving_or_editing(query)
     
-    # def delete_question(self,)
+    def delete_question(self, question_id):
+        query="""DELETE FROM questions WHERE questions.id = {}""".format(question_id)
+        self.delete_row(query)
