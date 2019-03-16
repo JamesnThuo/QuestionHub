@@ -1,4 +1,5 @@
-import os
+"""Answer Model"""
+import psycopg2
 import datetime
 from .database import DatabaseConnection as db_url
 
@@ -23,4 +24,7 @@ class Answer(db_url):
         query=""" DELETE FROM answers WHERE id = {} """ .format(answer_id)
         self.delete_row(query)
     
-    
+    def select_correct_answer(self, answer_id, question_id):
+        """Allows the owner of the question to select correct answer"""
+        query=""" UPDATE ansers SET isCorrect = True WHERE question_id= {}""".format(question_id)
+        self.saving_or_editing(query)
