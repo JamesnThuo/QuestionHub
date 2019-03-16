@@ -1,4 +1,4 @@
-"""Upvote Model"""
+"""Upvote Model Class"""
 import datetime
 import psycopg2
 from .database import DatabaseConnection as db_conn
