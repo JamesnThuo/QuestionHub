@@ -2,6 +2,7 @@ import os
 from .models.database import DatabaseConnection
 from instance.config import app_config
 from flask import Flask, Blueprint, jsonify
+from .views.user_view import user_blue
 
 def create_app(name_conf):
     # We will be using the config variable to determine the database
@@ -18,4 +19,5 @@ def create_app(name_conf):
         DatabaseConnection.drop_tables(DatabaseConnection)
     DatabaseConnection.create_tables(DatabaseConnection)
     
+    app.register_blueprint(user_blue, url_prefix="/api/user")
     return app

@@ -14,7 +14,7 @@ class User(db_conn):
         self.registerdate=time_now
 
     """Registering a new user"""
-    def create_new_user(self,userdata):
+    def create_new_user(self):
         query=""" INSERT INTO users (firstname, secondname, email, password, registerdate) VALUES ('{}','{}','{}','{}','{}')
         """ .format(self.firstname,self.secondname,self.email,self.password,self.registerdate)
         
