@@ -1,4 +1,4 @@
-"""Contains the endpoints for question Model"""
+"""Contains the endpoints for Question Model"""
 import os
 from flask import Flask, Blueprint, request, jsonify, abort, make_response
 from ..models.question import Question
@@ -17,7 +17,7 @@ def add_question():
            "error" : "invalid question data input",
            "message" : "missing either question or user id",
            "status" : 400
-        }), 400
+        }),400
     new_question=Question(questiondata)
     new_question.add_question()
     
