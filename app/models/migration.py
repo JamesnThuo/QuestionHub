@@ -28,7 +28,6 @@ def set_up_tables():
     create_answer_table="""CREATE TABLE IF NOT EXISTS answers (
             id serial PRIMARY KEY,
             description VARCHAR(50),
-            user_id INT,
             question_id INT,
             postedOn TIMESTAMP,
             isCorrect BOOLEAN DEFAULT FALSE

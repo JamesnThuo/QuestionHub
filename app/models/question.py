@@ -11,9 +11,9 @@ class Question(db_conn):
         self.user_id=question_data[1]
         self.posted_on=time_now
     
-    def add_question(self,question_data):
+    def add_question(self):
         """Adding a question to database"""
-        query="""INSERT INTO questions (description,user_id,posted_on) VALUES ('{}','{}','{}')
+        query="""INSERT INTO questions (description,user_id,postedon) VALUES ('{}','{}','{}')
         """.format(self.description,self.user_id,self.posted_on)
         self.saving_or_editing(query)
     

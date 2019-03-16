@@ -7,7 +7,7 @@ from flask import Flask, Blueprint, request, jsonify, abort, make_response
 from ..models.user import User
 
 key = os.getenv('SECRET')
-user_blue = Blueprint("view",__name__)
+user_blue = Blueprint("user_view",__name__)
 
 @user_blue.route('/register', methods=['POST'])
 def user_signup():
