@@ -15,7 +15,7 @@ def user_signup():
     try:
         userdata=request.get_json()
         firstname=userdata["firstname"]
-        secondname=userdata["secondname"]
+        lastname=userdata["lastname"]
         email=userdata["email"]
         password=userdata["password"]
     except Exception:
@@ -25,7 +25,7 @@ def user_signup():
            "status" : 400
          }), 400
 
-    new_user=User([firstname, secondname, email, password])
+    new_user=User([firstname, lastname, email, password])
     new_user.create_new_user()
     return jsonify({
          "status": 201, 
