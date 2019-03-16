@@ -10,6 +10,7 @@ def drop_table_if_exists():
     return [drop_questions, drop_users, drop_answers, drop_upvotes]
 
 def set_up_tables():
+    """Setting up the database schema"""
     create_users_table=""" CREATE TABLE IF NOT EXISTS users (
             id serial PRIMARY KEY,
             firstname VARCHAR(50) NOT NULL,
