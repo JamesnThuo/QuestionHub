@@ -13,7 +13,7 @@ class Question(db_conn):
     
     def add_question(self):
         """Adding a question to database"""
-        query="""INSERT INTO questions (description,user_id,posted_on) VALUES ('{}','{}','{}')
+        query="""INSERT INTO questions (description,user_id,postedon) VALUES ('{}','{}','{}')
         """.format(self.description,self.user_id,self.posted_on)
         self.saving_or_editing(query)
     

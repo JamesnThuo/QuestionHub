@@ -20,6 +20,6 @@ def create_app(name_conf):
         DatabaseConnection.drop_tables(DatabaseConnection)
     DatabaseConnection.create_tables(DatabaseConnection)
     
-    app.register_blueprint(user_blue, url_prefix="/api/user")
+    app.register_blueprint(user_blue, url_prefix="/api/users")
     app.register_blueprint(question_blue, url_prefix="/api")
     return app
