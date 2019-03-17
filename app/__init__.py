@@ -18,8 +18,8 @@ def create_app(name_conf):
     print("\n\n\n", db_url, "\n\n\n")
 
     DatabaseConnection(db_url)
-    if name_conf=="testing":
-        DatabaseConnection.drop_tables(DatabaseConnection)
+    # if name_conf=="testing":
+        # DatabaseConnection.drop_tables(DatabaseConnection)
     DatabaseConnection.create_tables(DatabaseConnection)
     
     app.register_blueprint(user_blue, url_prefix="/api/users")
