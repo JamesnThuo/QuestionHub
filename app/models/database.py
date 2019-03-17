@@ -10,7 +10,7 @@ class DatabaseConnection:
 
             #connection
             self.conn=psycopg2.connect(db_url)
-            self.cur=conn.cursor()
+            self.cur=self.conn.cursor()
         except Exception as error:
             print(error)
     
