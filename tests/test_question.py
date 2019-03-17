@@ -16,7 +16,7 @@ class QuestionTestCase(unittest.TestCase):
         self.question={"description":"What is the square root of 4","user_id":1}
     
     def test_question_creation(self):
-        """Test Api that can add question"""
+        """Test Api Endpoint that adds question"""
         resp=self.client.post(path='/api/questions', data=json.dumps(self.question), content_type='application/json')
         self.assertEqual(resp.status_code, 201)
         # self.assertIn('What is the square root of 4', str(resp.data))
