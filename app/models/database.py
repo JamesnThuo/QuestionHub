@@ -17,8 +17,8 @@ class DatabaseConnection:
         """creating the tables in migration"""
         tables_to_create=set_up_tables()
         for query in tables_to_create:
-            self.conn.cursor().execute(query)
-            self.conn.commit()
+            psycopg2.connect(db_url).execute(query)
+            psycopg2.connect(db_url).commit()
     
     def drop_tables(self):
         """Drops tables in the database"""
