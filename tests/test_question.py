@@ -23,8 +23,8 @@ class QuestionTestCase(unittest.TestCase):
 
     def tearDown(self):
         """Teardown all initialized variables"""
-        with self.app.app_context():
-            DatabaseConnection.drop_tables(DatabaseConnection)
+        # with self.app.app_context():
+            # DatabaseConnection.drop_tables(DatabaseConnection)
         pass
 
 # Make the tests conveniently executable
