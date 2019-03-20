@@ -7,7 +7,6 @@ class DatabaseConnection:
         """"Initialize the class intance to take a database url as a parameter"""
         try:
             # global conn,cur
-
             #connection
             self.conn=psycopg2.connect(db_url)
             self.cur=self.conn.cursor()
@@ -18,7 +17,7 @@ class DatabaseConnection:
         """creating the tables in migration"""
         tables_to_create=set_up_tables()
         for query in tables_to_create:
-            self.cur.execute(query)
+            self.conn.cursor().execute(query)
             self.conn.commit()
     
     def drop_tables(self):
