@@ -5,11 +5,19 @@ python:
     - 3.6
     - 3.7
 sudo: true
+addons:
+  postgresql: "9.5"
+services:
+  - postgresql
 #command to install dependancies
 install:
-  - pip install -r requirements.txt
-  - pip install coveralls
-#Command to run scripts
+  - 'pip install -r requirements.txt'
+  - 'pip install coveralls'
+  - 'pip install pipenv'
+  - 'pipenv sync'
+
+before_script:
+- psql -c 'create database questionhubtest;' -U postgres
 script:
   - pytest
 after_success:
