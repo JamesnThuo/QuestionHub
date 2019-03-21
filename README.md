@@ -3,3 +3,5 @@
 
 [![Coverage Status](https://coveralls.io/repos/github/JamesnThuo/QuestionHub/badge.svg?branch=travis)](https://coveralls.io/github/JamesnThuo/QuestionHub?branch=travis)
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
