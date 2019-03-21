@@ -19,7 +19,7 @@ class TestingConfig(Config):
     DEBUG = True
     Database_Url = os.getenv("Test_Database")
 
-#for heroku in case I decide to host the app but that's it
+#for heroku
 class ProductionConfig(Config):
     """ Configuration for the production environment """
     DEBUG = False
