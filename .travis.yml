@@ -15,15 +15,15 @@ install:
   - 'pip install coveralls'
   - 'pip install pytest-cov'
   - 'pip install pipenv'
-  - 'pip install coverage==4.3'
+  # - 'pip install coverage==4.3'
   - 'pip install codeclimate-test-reporter'
   # - 'pipenv sync'
 
 before_script:
 - psql -c 'create database questionhubtest;' -U postgres
 script:
-  - py.test --cov=tests/
-  - coverage
+  - py.test --cov-report= --cov=tests/
+  # - coverage
   - codeclimate-test-reporter --file .coverage
 after_success:
   - coveralls
