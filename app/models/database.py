@@ -26,8 +26,8 @@ class DatabaseConnection:
     def drop_tables(self):
         """Drops tables in the database"""
         tables_to_drop=drop_table_if_exists()
-        conn=psycopg2.connect(os.getenv("Test_Database"))
-        cur=conn.cursor()
+        # conn=psycopg2.connect(os.getenv("Test_Database"))
+        # cur=conn.cursor()
         for query in tables_to_drop:
             
             cur.execute(query)
