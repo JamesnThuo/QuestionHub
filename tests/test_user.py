@@ -11,7 +11,7 @@ class UserTestCase(unittest.TestCase):
     """This class represents the user TestCase"""
     def setUp(self):
         """Defines the test variable"""
-        # pass
+        
         self.app=create_app("testing")
         self.client=self.app.test_client()
         self.userdata={
