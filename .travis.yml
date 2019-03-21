@@ -13,6 +13,7 @@ services:
 install:
   - 'pip install -r requirements.txt'
   - 'pip install coveralls'
+  - 'pip install pytest-cov'
   - 'pip install pipenv'
   - 'pip install coverage'
   # - 'pipenv sync'
