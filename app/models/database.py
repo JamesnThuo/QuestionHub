@@ -21,11 +21,14 @@ class DatabaseConnection:
             cur.execute(query)
             conn.commit()
             # cur.close()
-    
-    def drop_tables(self):
+    @staticmethod
+    def drop_tables():
         """Drops tables in the database"""
         tables_to_drop=drop_table_if_exists()
+        conn=psycopg2.connect(db_url)
+        cur=conn.cursor()
         for query in tables_to_drop:
+            
             cur.execute(query)
             conn.commit()
     
