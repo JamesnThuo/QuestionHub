@@ -14,10 +14,13 @@ install:
   - 'pip install -r requirements.txt'
   - 'pip install coveralls'
   - 'pip install pipenv'
+  - 'pip install coverage'
   # - 'pipenv sync'
 
 before_script:
 - psql -c 'create database questionhubtest;' -U postgres
+script: true
+- nosetests --with-coverage --coverage report
 script:
   - pytest
 after_success:
