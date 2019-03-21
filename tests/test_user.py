@@ -29,5 +29,5 @@ class UserTestCase(unittest.TestCase):
     def tearDown(self):
         """Teardown all initialized variables"""
         with self.app.app_context():
-            # DatabaseConnection.drop_tables(DatabaseConnection)
+            DatabaseConnection.drop_tables(DatabaseConnection)
         # pass
