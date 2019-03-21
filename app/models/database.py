@@ -1,3 +1,4 @@
+import os
 import psycopg2
 import psycopg2.psycopg1
 from .migration import set_up_tables, drop_table_if_exists
@@ -25,7 +26,7 @@ class DatabaseConnection:
     def drop_tables():
         """Drops tables in the database"""
         tables_to_drop=drop_table_if_exists()
-        conn=psycopg2.connect(db_url)
+        conn=psycopg2.connect(os.getenv("Test_Database"))
         cur=conn.cursor()
         for query in tables_to_drop:
             
