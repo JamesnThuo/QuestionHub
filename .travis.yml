@@ -20,8 +20,6 @@ install:
 
 before_script:
 - psql -c 'create database questionhubtest;' -U postgres
-script: true
-- nosetests --with-coverage --coverage report
 script:
   - pytest
 after_success:
